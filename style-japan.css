@@ -1709,7 +1709,7 @@ span.base {
 .icon_language{
     height: 20px;
     width: 20px;
-    float: right;
+    margin-left: 10px;
 }
 .icon_language_sub{
     height: 20px;
@@ -1718,15 +1718,6 @@ span.base {
 }
 #languge{
     margin-left: -80px !important;
-}
-/* .invalid class prevents CSS from automatically applying */
-.invalid input:required:invalid {
-  background: #be4c54;
-}
-
-/* Mark valid inputs during .invalid state */
-.invalid input:required:valid {
-  background: #17d654;
 }
 /*----------------------------------------*/
 /* End Pages
