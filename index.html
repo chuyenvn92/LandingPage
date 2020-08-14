@@ -1036,7 +1036,8 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <button type="submit1" id="submit1" class="contact-btn">Đăng ký</button>
+                                    <button type="submit1" id="submit1" class="contact-btn" onclick="sendSuccess()">Đăng
+                                        ký</button>
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -1142,6 +1143,9 @@
     <!-- all js here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
+        function sendSuccess() {
+            swal("", "Cảm ơn bạn đã phản hồi!", "success")
+        }
         function sendEmail() {
             var name = $("#name");
             var email = $("#email");
