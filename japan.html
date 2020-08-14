@@ -16,6 +16,7 @@
 
     <!-- bootstrap v3.3.6 css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- meanmenu css -->
     <link rel="stylesheet" href="css/meanmenu.min.css">
     <!-- owl-carousel css -->
@@ -94,7 +95,7 @@
                                                 <li><a href="japan.html">日本語<img class="icon_language_sub"
                                                             src="https://hachinet.com/static/img/flags/Japan.png" /></a>
                                                 </li>
-                                                <li><a href="index-4.html">ベトナム語<img class="icon_language_sub"
+                                                <li><a href="index.html">ベトナム語<img class="icon_language_sub"
                                                             src="https://hachinet.com/static/img/flags/VietNam.png" /></a>
                                                 </li>
                                             </ul>
@@ -1068,11 +1069,11 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+            aria-hidden="true" style="z-index: 999999;">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Form</h5>
+                        <!-- <h5 class="modal-title" id="exampleModalLabel">Form</h5> -->
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -1080,17 +1081,17 @@
                     <div class="modal-body">
                         <form class="needs-validation" id="myForm" novalidate>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Name</label>
+                                <label for="exampleInputEmail1">名前</label>
                                 <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
-                                    placeholder="Name" required>
+                                    placeholder="名前" required>
                                 <!-- <div class="invalid-feedback">
                                                 Please enter name
                                             </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
+                                <label for="exampleInputEmail1">メール</label>
                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                                    placeholder="Enter email" required>
+                                    placeholder="メール" required>
                                 <!-- <div class="invalid-feedback">
                                                 Please enter a valid email address
                                             </div> -->
@@ -1099,22 +1100,22 @@
                                                 else.</small> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Company</label>
+                                <label for="exampleInputEmail1">会社</label>
                                 <input type="text" class="form-control" id="company" aria-describedby="emailHelp"
-                                    placeholder="Company" required>
+                                    placeholder="会社" required>
                                 <!-- <div class="invalid-feedback">
                                                 Please enter Company
                                             </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Address</label>
-                                <input type="text" class="form-control" id="address" placeholder="Address" required>
+                                <label for="exampleInputPassword1">アドレス</label>
+                                <input type="text" class="form-control" id="address" placeholder="アドレス" required>
                                 <!-- <div class="invalid-feedback">
                                                 Please enter a address
                                             </div> -->
                             </div>
                             <button type="button" onclick="sendEmail()" value="Send An Email"
-                                class="btn btn-primary">Send</button>
+                                class="slide-btn">送り</button>
                         </form>
                     </div>
                 </div>
@@ -1143,9 +1144,11 @@
                         address: address.val(),
                         company: company.val()
                     }, success: function (response) {
+                        swal("", "申し込んで有難うございます。セミナーの開催日時(19/08/2020 )の昨日にあなたのメールにセミナーのURLリンクを送らせていただきます。", "success");
                         $('#myForm')[0].reset();
                         // $('.sent-notification').text("Message Sent Successfully.");
-                        alert('Thank you!!!')
+                        // alert('申し込んで有難うございます。セミナーの開催日時(19/08/2020 )の昨日にあなたのメールにセミナーのURLリンクを送らせていただきます。')
+                        $('.modal').hide();
                     }
                 });
             }

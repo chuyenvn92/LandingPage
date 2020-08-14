@@ -16,6 +16,7 @@
 
     <!-- bootstrap v3.3.6 css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <!-- meanmenu css -->
@@ -1084,11 +1085,11 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+            aria-hidden="true" style="z-index: 9999999;">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Form</h5>
+                        <!-- <h5 class="modal-title" id="exampleModalLabel">Form</h5> -->
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -1096,7 +1097,7 @@
                     <div class="modal-body">
                         <form class="needs-validation" id="myForm" novalidate>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Name</label>
+                                <label for="exampleInputEmail1">Tên của bạn</label>
                                 <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
                                     placeholder="Name" required>
                                 <!-- <div class="invalid-feedback">
@@ -1104,7 +1105,7 @@
                                 </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
+                                <label for="exampleInputEmail1">Email</label>
                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                     placeholder="Enter email" required>
                                 <!-- <div class="invalid-feedback">
@@ -1115,7 +1116,7 @@
                                     else.</small> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Company</label>
+                                <label for="exampleInputEmail1">Công ty</label>
                                 <input type="text" class="form-control" id="company" aria-describedby="emailHelp"
                                     placeholder="Company" required>
                                 <!-- <div class="invalid-feedback">
@@ -1123,14 +1124,14 @@
                                 </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Address</label>
+                                <label for="exampleInputPassword1">Địa chỉ</label>
                                 <input type="text" class="form-control" id="address" placeholder="Address" required>
                                 <!-- <div class="invalid-feedback">
                                     Please enter a address
                                 </div> -->
                             </div>
                             <button type="button" onclick="sendEmail()" value="Send An Email"
-                                class="btn btn-primary">Send</button>
+                                class="slide-btn">Gửi</button>
                         </form>
                     </div>
                 </div>
@@ -1138,7 +1139,6 @@
         </div>
         <!-- End Modal -->
     </footer>
-
     <!-- all js here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
@@ -1159,8 +1159,11 @@
                         address: address.val(),
                         company: company.val()
                     }, success: function (response) {
+                        swal("", "Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)", "success");
                         $('#myForm')[0].reset();
-                        alert('Thank you!!!')
+                        $('.modal').hide();
+                        // alert('Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)')
+
                     }
                 });
             }
@@ -1175,23 +1178,6 @@
 
             return true;
         }
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
 
     </script>
     <script src="./js/vendor/app.js"></script>
