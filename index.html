@@ -292,7 +292,8 @@
                     </div>
                 </div>
                 <center>
-                    <button type="button" class="slide-btn " data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="slide-btn" id="slide-btn1" data-toggle="modal"
+                        data-target="#exampleModal">
                         Đăng kí ngay
                     </button>
                 </center>
@@ -1016,12 +1017,12 @@
                             <form id="contactForm" method="POST"
                                 action="http://usdtheme.com/usd/samual-preview/contact.php" class="contact-form">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="name1" class="form-control" placeholder="Name" required
+                                    <input type="text" id="nameSuccess" class="form-control" placeholder="Name" required
                                         data-error="Please enter your name">
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="email" class="email form-control" id="email1" placeholder="Email"
+                                    <input type="email" class="email form-control" id="emailSuccess" placeholder="Email"
                                         required data-error="Please enter your email">
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -1098,7 +1099,7 @@
                     <div class="modal-body">
                         <form class="needs-validation" id="myForm" novalidate>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tên của bạn</label>
+                                <label for="exampleInputEmail1">Tên của bạn*</label>
                                 <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
                                     placeholder="Name" required>
                                 <!-- <div class="invalid-feedback">
@@ -1106,7 +1107,7 @@
                                 </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
+                                <label for="exampleInputEmail1">Email*</label>
                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                     placeholder="Enter email" required>
                                 <!-- <div class="invalid-feedback">
@@ -1117,7 +1118,7 @@
                                     else.</small> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Công ty</label>
+                                <label for="exampleInputEmail1">Công ty*</label>
                                 <input type="text" class="form-control" id="company" aria-describedby="emailHelp"
                                     placeholder="Company" required>
                                 <!-- <div class="invalid-feedback">
@@ -1125,14 +1126,14 @@
                                 </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Địa chỉ</label>
+                                <label for="exampleInputPassword1">Địa chỉ*</label>
                                 <input type="text" class="form-control" id="address" placeholder="Address" required>
                                 <!-- <div class="invalid-feedback">
                                     Please enter a address
                                 </div> -->
                             </div>
-                            <button type="button" onclick="sendEmail()" value="Send An Email"
-                                class="slide-btn">Gửi</button>
+                            <button type="button" onclick="sendEmail()" value="Send An Email" class="slide-btn"
+                                id="slide-btn1">Gửi</button>
                         </form>
                     </div>
                 </div>
@@ -1144,7 +1145,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         function sendSuccess() {
-            swal("", "Cảm ơn bạn đã phản hồi!", "success")
+            swal("", "Cảm ơn bạn đã phản hồi!", "success", { button: false })
         }
         function sendEmail() {
             var name = $("#name");
@@ -1179,7 +1180,6 @@
                 return false;
             } else
                 caller.css('border', '');
-
             return true;
         }
 

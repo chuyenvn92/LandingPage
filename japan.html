@@ -277,7 +277,8 @@
                     </div>
                 </div>
                 <center>
-                    <button type="button" class="slide-btn" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="slide-btn" id="slide-btn1" data-toggle="modal"
+                        data-target="#exampleModal">
                         直ぐに登録
                     </button>
                 </center>
@@ -982,7 +983,7 @@
                             <p>Water The universal acceptance of website has given a tremendous opportunity for merchants to do crossborder transactions instantly and at reduced cost.</p> -->
                         <div class="contact-icon">
                             <div class="single-contact">
-                                <br /><br />
+                                <br />
                                 <h5>場所 :</h5>
                                 <a href="#"><i class="fa fa-map"></i><span>2F - 21B6, 234 Pham Van Dong</span></a>
                                 <a href="#"><i class="fa fa-phone"></i><span>(+84) 24-6290-0388</span></a>
@@ -1020,7 +1021,8 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <button type="submit1" id="submit1" class="contact-btn" onclick="sendSuccess()">登録</button>
+                                    <button type="submit1" id="submit1" class="contact-btn"
+                                        onclick="sendSuccess()">登録</button>
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -1081,7 +1083,7 @@
                     <div class="modal-body">
                         <form class="needs-validation" id="myForm" novalidate>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">名前</label>
+                                <label for="exampleInputEmail1">名前*</label>
                                 <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
                                     placeholder="名前" required>
                                 <!-- <div class="invalid-feedback">
@@ -1089,7 +1091,7 @@
                                             </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">メール</label>
+                                <label for="exampleInputEmail1">メール*</label>
                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                     placeholder="メール" required>
                                 <!-- <div class="invalid-feedback">
@@ -1100,7 +1102,7 @@
                                                 else.</small> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">会社</label>
+                                <label for="exampleInputEmail1">会社*</label>
                                 <input type="text" class="form-control" id="company" aria-describedby="emailHelp"
                                     placeholder="会社" required>
                                 <!-- <div class="invalid-feedback">
@@ -1108,14 +1110,14 @@
                                             </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">アドレス</label>
+                                <label for="exampleInputPassword1">アドレス*</label>
                                 <input type="text" class="form-control" id="address" placeholder="アドレス" required>
                                 <!-- <div class="invalid-feedback">
                                                 Please enter a address
                                             </div> -->
                             </div>
-                            <button type="button" onclick="sendEmail()" value="Send An Email"
-                                class="slide-btn">送り</button>
+                            <button type="button" onclick="sendEmail()" value="Send An Email" class="slide-btn"
+                                id="slide-btn1">送り</button>
                         </form>
                     </div>
                 </div>
@@ -1154,7 +1156,7 @@
             }
         }
         function sendSuccess() {
-            swal("", "Cảm ơn bạn đã phản hồi!", "success")
+            swal("", "ありがとうございました。", "success", { button: false })
         }
 
         function isNotEmpty(caller) {

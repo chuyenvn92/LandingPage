@@ -210,7 +210,7 @@
                         All these questions and many other questions will be answered at the online seminar "OFFSHORE
                         SERVICE IN THE POST COVID-19"
                         <br />
-                        <center> ●This seminar is recommended for●</center>
+                        This seminar is recommended for :<br />
                         *Those who used to apply offshore service
                         <br />
                         *Those who have never ever apply offshore service
@@ -288,7 +288,8 @@
                     </div>
                 </div>
                 <center>
-                    <button type="button" class="slide-btn" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="slide-btn" id="slide-btn1" data-toggle="modal"
+                        data-target="#exampleModal">
                         Register here
                     </button>
                 </center>
@@ -993,7 +994,7 @@
                             <p>Water The universal acceptance of website has given a tremendous opportunity for merchants to do crossborder transactions instantly and at reduced cost.</p> -->
                         <div class="contact-icon">
                             <div class="single-contact">
-                                <br /><br />
+                                <br />
                                 <h5>Location :</h5>
                                 <a href="#"><i class="fa fa-map"></i><span>2F - 21B6, 234 Pham Van Dong</span></a>
                                 <a href="#"><i class="fa fa-phone"></i><span>(+84) 24-6290-0388</span></a>
@@ -1093,7 +1094,7 @@
                     <div class="modal-body">
                         <form class="needs-validation" id="myForm" novalidate>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Name</label>
+                                <label for="exampleInputEmail1">Name*</label>
                                 <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
                                     placeholder="Name" required>
                                 <!-- <div class="invalid-feedback">
@@ -1101,7 +1102,7 @@
                                         </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
+                                <label for="exampleInputEmail1">Email*</label>
                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                     placeholder="Enter email" required>
                                 <!-- <div class="invalid-feedback">
@@ -1112,7 +1113,7 @@
                                             else.</small> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Company</label>
+                                <label for="exampleInputEmail1">Company*</label>
                                 <input type="text" class="form-control" id="company" aria-describedby="emailHelp"
                                     placeholder="Company" required>
                                 <!-- <div class="invalid-feedback">
@@ -1120,14 +1121,14 @@
                                         </div> -->
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Address</label>
+                                <label for="exampleInputPassword1">Address*</label>
                                 <input type="text" class="form-control" id="address" placeholder="Address" required>
                                 <!-- <div class="invalid-feedback">
                                             Please enter a address
                                         </div> -->
                             </div>
-                            <button type="button" onclick="sendEmail()" value="Send An Email"
-                                class="slide-btn">Send</button>
+                            <button type="button" onclick="sendEmail()" value="Send An Email" class="slide-btn"
+                                id="slide-btn1">Send</button>
                         </form>
                     </div>
                 </div>
@@ -1176,7 +1177,7 @@
             return true;
         }
         function sendSuccess() {
-            swal("", "Thank you for the registration", "success");
+            swal("", "Thank you for your feedback", "success", { button: false });
         }
         (function () {
             'use strict';
