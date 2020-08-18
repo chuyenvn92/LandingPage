@@ -1420,11 +1420,25 @@ span.base {
 .contact-form textarea#message {
     border: 1px solid #ccc;
     border-radius: 0px;
-    height: 180px;
+    height: 155px;
     padding: 20px;
     width: 100%;
 }
 .contact-page .contact-btn {
+    background: #ffb701;
+    border: 2px solid #ffb701;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5px;
+    padding: 10px 40px;
+    transition: 0.4s;
+    width: auto;
+    float: left;
+    text-transform: uppercase;
+	border-radius: 2px;
+	font-weight: 700;
+}.contact-page .contact-btn1 {
     background: #ffb701;
     border: 2px solid #ffb701;
     color: #fff;
@@ -1443,6 +1457,12 @@ span.base {
     background:transparent;
     border: 2px solid #ffb701 ;
     color: #ffb701;
+    transition: 0.4s;
+}
+.contact-page .contact-btn1:hover {
+    background:transparent;
+    border: 2px solid #ffb701 ;
+    color: black;
     transition: 0.4s;
 }
 /*----------------------------------------*/
