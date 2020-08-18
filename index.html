@@ -69,12 +69,9 @@
                             <ul class="header-social">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a>
                                 </li>
-                                <li><a href="#"><i
-                                            class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i
-                                            class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i
-                                            class="fa fa-youtube-play"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
                             </ul>
                             <!-- Social link end -->
                         </div>
@@ -1014,8 +1011,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="contact-form">
                         <div class="row">
-                            <form id="contactForm" method="POST"
-                                action="http://usdtheme.com/usd/samual-preview/contact.php" class="contact-form">
+                            <form id="contactForm" class="contact-form">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" id="nameSuccess" class="form-control" placeholder="Name" required
                                         data-error="Please enter your name">
@@ -1037,8 +1033,8 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <button type="submit1" id="submit1" class="contact-btn" onclick="sendSuccess()">Đăng
-                                        ký</button>
+                                    <button type="button" id="submit" class="contact-btn"
+                                        onclick="sendSuccess()">Gửi</button>
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -1065,14 +1061,10 @@
                             </div>
                             <div class="footer-social">
                                 <ul class="social-link">
-                                    <li><a href="#"><i
-                                                class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i
-                                                class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i
-                                                class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i
-                                                class="fa fa-youtube-play"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
                                 </ul>
                             </div>
                             <div class="copyright">
@@ -1145,7 +1137,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         function sendSuccess() {
-            swal("", "Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)", "success", { button: false })
+            var nameSuccess = $("#nameSuccess");
+            var emailSuccess = $("#emailSuccess");
+            var msg_subject = $("#msg_subject");
+            var message = $("#message");
+            $.ajax({
+                url: 'sendSuccess.php',
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    nameSuccess: nameSuccess.val(),
+                    emailSuccess: emailSuccess.val(),
+                    msg_subject: msg_subject.val(),
+                    message: message.val()
+                }, success: function (response) {
+                    swal("", "Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)", "success");
+                    $('#contactForm')[0].reset();
+                    // $('.modal').modal('hide');
+                }
+            });
         }
         function sendEmail() {
             var name = $("#name");
