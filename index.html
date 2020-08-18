@@ -1034,6 +1034,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                     <button type="button" id="submit" class="contact-btn"
+                                        data-loading-text="<i class='fa fa-spinner fa-spin '></i> Đang gửi"
                                         onclick="sendSuccess()">Gửi</button>
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
@@ -1124,8 +1125,9 @@
                                     Please enter a address
                                 </div> -->
                             </div>
-                            <button type="button" onclick="sendEmail()" value="Send An Email" class="slide-btn"
-                                id="slide-btn1">Gửi</button>
+                            <button type="button" onclick="sendEmail()"
+                                data-loading-text="<i class='fa fa-spinner fa-spin '></i> Đang gửi"
+                                value="Send An Email" class="slide-btn" id="slide-btn1">Gửi</button>
                         </form>
                     </div>
                 </div>
@@ -1141,6 +1143,7 @@
             var emailSuccess = $("#emailSuccess");
             var msg_subject = $("#msg_subject");
             var message = $("#message");
+            $('.contact-btn').button('loading');
             $.ajax({
                 url: 'sendSuccess.php',
                 method: 'POST',
@@ -1153,6 +1156,7 @@
                 }, success: function (response) {
                     swal("", "Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)", "success");
                     $('#contactForm')[0].reset();
+                    $('.contact-btn').button('reset');
                     // $('.modal').modal('hide');
                 }
             });
@@ -1164,6 +1168,7 @@
             var company = $("#company");
 
             if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(address) && isNotEmpty(company)) {
+                $('.slide-btn').button('loading');
                 $.ajax({
                     url: 'sendEmail.php',
                     method: 'POST',
@@ -1177,8 +1182,8 @@
                         swal("", "Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)", "success");
                         $('#myForm')[0].reset();
                         $('.modal').modal('hide');
+                        $('.slide-btn').button('reset');
                         // alert('Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)')
-
                     }
                 });
             }

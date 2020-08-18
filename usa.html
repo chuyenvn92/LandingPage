@@ -1029,6 +1029,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                                     <button type="button" id="submit" class="contact-btn"
+                                        data-loading-text="<i class='fa fa-spinner fa-spin '></i> Sending"
                                         onclick="sendSuccess()">Send</button>
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
@@ -1119,8 +1120,9 @@
                                             Please enter a address
                                         </div> -->
                             </div>
-                            <button type="button" onclick="sendEmail()" value="Send An Email" class="slide-btn"
-                                id="slide-btn1">Send</button>
+                            <button type="button" onclick="sendEmail()"
+                                data-loading-text="<i class='fa fa-spinner fa-spin '></i> Sending" value="Send An Email"
+                                class="slide-btn" id="slide-btn1">Send</button>
                         </form>
                     </div>
                 </div>
@@ -1140,6 +1142,7 @@
             var company = $("#company");
 
             if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(address) && isNotEmpty(company)) {
+                $('.slide-btn').button('loading');
                 $.ajax({
                     url: 'sendEmail.php',
                     method: 'POST',
@@ -1152,8 +1155,8 @@
                     }, success: function (response) {
                         swal("", "Thank you for the registration, we will send the URL link via email by the evening before the day of the event. (August 19th, 2020)", "success");
                         $('#myForm')[0].reset();
-                        // alert('Thank you for the registration, we will send the URL link via email by the evening before the day of the event. (August 19th, 2020)');
                         $('.modal').modal('hide');
+                        $('.slide-btn').button('reset');
                     }
                 });
             }
@@ -1173,6 +1176,7 @@
             var emailSuccess = $("#emailSuccess");
             var msg_subject = $("#msg_subject");
             var message = $("#message");
+            $('.contact-btn').button('loading');
             $.ajax({
                 url: 'sendSuccess.php',
                 method: 'POST',
@@ -1185,7 +1189,7 @@
                 }, success: function (response) {
                     swal("", "Thank you for the registration, we will send the URL link via email by the evening before the day of the event. (August 19th, 2020)", "success");
                     $('#contactForm')[0].reset();
-                    // $('.modal').modal('hide');
+                    $('.contact-btn').button('reset');
                 }
             });
         }

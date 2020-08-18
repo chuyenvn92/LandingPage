@@ -1017,8 +1017,9 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <button type="button" id="submit" class="contact-btn"
-                                        onclick="sendSuccess()">送り</button>
+                                    <button type="button" id="submit"
+                                        data-loading-text="<i class='fa fa-spinner fa-spin '></i> 送り"
+                                        class="contact-btn" onclick="sendSuccess()">送り</button>
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -1108,8 +1109,9 @@
                                                 Please enter a address
                                             </div> -->
                             </div>
-                            <button type="button" onclick="sendEmail()" value="Send An Email" class="slide-btn"
-                                id="slide-btn1">送り</button>
+                            <button type="button" onclick="sendEmail()"
+                                data-loading-text="<i class='fa fa-spinner fa-spin '></i> 送り" value="Send An Email"
+                                class="slide-btn" id="slide-btn1">送り</button>
                         </form>
                     </div>
                 </div>
@@ -1126,6 +1128,7 @@
             var emailSuccess = $("#emailSuccess");
             var msg_subject = $("#msg_subject");
             var message = $("#message");
+            $('.contact-btn').button('loading');
             $.ajax({
                 url: 'sendSuccess.php',
                 method: 'POST',
@@ -1138,6 +1141,7 @@
                 }, success: function (response) {
                     swal("", "申し込んで有難うございます。セミナーの開催日時(19/08/2020 )の昨日にあなたのメールにセミナーのURLリンクを送らせていただきます。", "success");
                     $('#contactForm')[0].reset();
+                    $('.contact-btn').button('reset');
                 }
             });
         }
@@ -1148,6 +1152,7 @@
             var company = $("#company");
 
             if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(address) && isNotEmpty(company)) {
+                $('.slide-btn').button('loading');
                 $.ajax({
                     url: 'sendEmail.php',
                     method: 'POST',
@@ -1163,6 +1168,7 @@
                         // $('.sent-notification').text("Message Sent Successfully.");
                         // alert('申し込んで有難うございます。セミナーの開催日時(19/08/2020 )の昨日にあなたのメールにセミナーのURLリンクを送らせていただきます。')
                         $('.modal').modal('hide');
+                        $('.slide-btn').button('reset');
                     }
                 });
             }
