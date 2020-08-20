@@ -472,9 +472,8 @@ div#preloader { position: fixed; left: 0; top: 0; z-index: 99999; width: 100%; h
     letter-spacing: 1px;
 }
 .title2 {
-    font-size: 70px;
-    line-height: 70px;
-    margin-bottom: 0px;
+    font-size: 90px;
+    line-height: 90px !important;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
@@ -1420,7 +1419,7 @@ span.base {
 .contact-form textarea#message {
     border: 1px solid #ccc;
     border-radius: 0px;
-    height: 155px;
+    height: 175px;
     padding: 20px;
     width: 100%;
 }

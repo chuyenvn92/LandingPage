@@ -82,9 +82,6 @@
                             <div class="collapse navbar-collapse" id="navbar-example">
                                 <div class="main-menu">
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li><a class="pages page-scroll" href="#home">Home</a></li>
-                                        <li><a class="page-scroll" href="#about">About</a></li>
-                                        <li><a class="page-scroll" href="#contact">Contact</a></li>
                                         <li
                                             style="margin-left: 10px; margin-right: 30px; padding-right: 10px; width: 100px;cursor: pointer;">
                                             <a>Language<img class="icon_language"
@@ -182,30 +179,27 @@
                 <!-- </div> -->
                 <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
                 <div class="about-inner" style="margin-top: -50px;">
-                    <h5>BMay we have known, the outbreak of Covid 19 pandemic has brought an unprecedented challenge and
-                        is predicted to have a significant
-                        impact on the global economy, therefore, requiring the enterprise to have a breakthrough
-                        solution.<br /><br />Offshore development in Vietnam has spread in Japan recently, Some
-                        businesses decide Offshore services in
-                        Vietnam solution to optimize cost, enterprise resources, helping restructure development
-                        activities in the crisis time.<br /><br />With the way businesses provide
-                        products to the market, the slowdown of the whole market can be an opportunity to focus on
-                        product and service adjustment and improvement, or competitiveness enhancement to receive the
-                        wave after resuscitation market. Building a development base abroad is always not easy, and
-                        boldly implementing in the period having labour force and time can be a wise strategy for
-                        businesses.
-                        <br /><br />Nowadays, people are getting familiar with the utilities, products, online
-                        applications, working remotely, in a certain aspect, which gives the world a boost in Digital
-                        Transformation and growth. Businesses with the ability to adapt to highly effective working
-                        methods will survive and growth, if not, they could be eliminated. And obviously, offshore
-                        development is not as strange as just 6 months ago. Have you ever wondered:
+                    <h5>The prolongation of the Corona pandemic has significantly impacted on the global economy, and we
+                        are demanding drastic measures by each company.
+                        In New Norma, it is not an exaggeration to state that the existence of a company depends on its
+                        ability to adapt to a more efficient way of working.<br /><br />
+                        For a company that is often unable to focus its energies on business transformation,
+                        moving abroad to stay ahead of its future prospects is a difficult strategy when the market
+                        stagnates and resources are available.<br /><br />
+                        Now that remote work has become familiar, offshore service is much closer than before Corona.
+                        In this situation, Vietnam's offshore service can be an effective way to optimize resources.
+                        <br /><br />Now that remote work has become familiar, offshore service is much closer than
+                        before Corona.
+                        In this situation, Vietnam's offshore service can be an effective way to optimize resources.
                         <br /><br />
-                        - What benefits can Offshore services bring to your business in this time of crisis?
+                        In this seminar, we will give you the answer to the following questions and explain what you
+                        should know about offshore service in Vietnam.<br />
+                        * What is the reason for using offshore service nowadays?
                         <br />
-                        - How can I apply the Offshore service most effectively?
+                        * How to effectively take advantage of offshore service?
                         <br />
-                        - How to avoid common failures when using offshore service?</h5>
-                    <center><img src="img/background/covid.png" alt=""
+                        * How to avoid common mistakes in offshore service?</h5>
+                    <center><img src="img/background/4.png" alt=""
                             style="height: 90%; margin-left: 50px; padding-bottom: 10px;" /></center>
                     <h5>
                         All these questions and many other questions will be answered at the online seminar "OFFSHORE
@@ -997,7 +991,8 @@
                             <div class="single-contact">
                                 <br />
                                 <h5>Location :</h5>
-                                <a><i class="fa fa-map"></i><span>2F - 21B6, 234 Pham Van Dong</span></a>
+                                <a><i class="fa fa-map"></i><span>2F - 21B6, 234 Pham Van Dong, Hanoi,
+                                        Vietnam</span></a>
                                 <a><i class="fa fa-phone"></i><span>(+84) 24-6290-0388</span></a>
                                 <a><i class="fa fa-envelope"></i><span>contact@hachinet.com</span></a>
                                 <br />
@@ -1185,23 +1180,25 @@
             var emailSuccess = $("#emailSuccess");
             var msg_subject = $("#msg_subject");
             var message = $("#message");
-            $('.contact-btn1').button('loading');
-            $.ajax({
-                url: 'sendSuccess.php',
-                method: 'POST',
-                dataType: 'json',
-                data: {
-                    nameSuccess: nameSuccess.val(),
-                    emailSuccess: emailSuccess.val(),
-                    msg_subject: msg_subject.val(),
-                    message: message.val()
-                }, success: function (response) {
-                    swal("", "Thank you for the registration, we will send the URL link via email by the evening before the day of the event. (August 19th, 2020)", "success");
-                    $('#contactForm')[0].reset();
-                    $('.contact-btn1').button('reset');
-                    // $('.modal').modal('hide');
-                }
-            });
+            if (isNotEmpty(nameSuccess) && isNotEmpty(emailSuccess) && isNotEmpty(msg_subject) && isNotEmpty(message)) {
+                $('.contact-btn1').button('loading');
+                $.ajax({
+                    url: 'sendSuccess.php',
+                    method: 'POST',
+                    dataType: 'json',
+                    data: {
+                        nameSuccess: nameSuccess.val(),
+                        emailSuccess: emailSuccess.val(),
+                        msg_subject: msg_subject.val(),
+                        message: message.val()
+                    }, success: function (response) {
+                        swal("", "Thank you for the registration, we will send the URL link via email by the evening before the day of the event. (August 19th, 2020)", "success");
+                        $('#contactForm')[0].reset();
+                        $('.contact-btn1').button('reset');
+                        // $('.modal').modal('hide');
+                    }
+                });
+            }
         }
         // function sendSuccess() {
         //     swal("", "Thank you for the registration, we will send the URL link via email by the evening before the day of the event. (August 19th, 2020)", "success", { button: false });

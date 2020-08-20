@@ -84,9 +84,6 @@
                             <div class="collapse navbar-collapse" id="navbar-example">
                                 <div class="main-menu">
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li><a class="pages page-scroll" href="#home">Trang chủ</a></li>
-                                        <li><a class="page-scroll" href="#about">Giới thiệu</a></li>
-                                        <li><a class="page-scroll" href="#contact">Liên hệ</a></li>
                                         <li
                                             style="margin-left: -20px; margin-right: 30px; padding-right: 10px; width: 100px; cursor: pointer;">
                                             <a>Ngôn ngữ<img class="icon_language"
@@ -184,30 +181,24 @@
                 <!-- </div> -->
                 <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
                 <div class="about-inner" style="margin-top: -50px;">
-                    <h5>Bùng nổ đại dịch Covid-19 đã và đang mang đến những thách thức chưa từng có và có
-                        ảnh hưởng sâu
-                        rộng đến nền kinh tế, đòi hỏi mỗi doanh nghiệp phải có giải pháp mang tính đột phá. Phát triển
-                        offshore tại Việt Nam đã bùng nổ tại Nhật Bản trong thời gian qua, giờ đây có thể trở thành lựa
-                        chọn để quí doanh nghiệp tối ưu chi phí,
-                        nguồn lực, giúp tái cơ cấu hoạt động phát triển trong giai đoạn khủng hoảng.<br />Với cách doanh
-                        nghiệp cung cấp sản phẩm ra thị trường, giai đoạn toàn thị trường chững lại có thể là thời cơ để
-                        tập trung vào điều chỉnh hay hoàn thiện sản phẩm và dịch vụ, tăng sức cạnh tranh để đón nhận làn
-                        sóng sau khi thị trường hồi sức. Gây dựng một cơ sở phát triển tại nước ngoài thường không dễ
-                        dàng, và mạnh dạn thực hiện trong giai đoạn có
-                        nguồn lực cũng như thời gian cũng có thể là một hướng đi chiến lược khôn ngoan cho doanh
-                        nghiệp.<br />Hiện nay người dân trên toàn thế giới đã tập làm quen thêm với những tiện ích, sản
-                        phẩm, ứng dụng online, làm việc từ xa. Điều này mang đến cho thế giới một cú hích về chuyển đổi
-                        số và tăng trưởng. Các doanh nghiệp có khả năng thích nghi với những phương thức làm việc mang
-                        lại hiệu quả cao sẽ sống sót và phát triển, ngược lại thì bị đào thải. Và rõ ràng phát triển
-                        offshore không còn xa lạ như chỉ 6 tháng trước đây. Bạn đã bao giờ tự hỏi:
+                    <h5>Việc kéo dài cuộc Chiến tranh Corona mới đã có tác động lớn đến nền kinh tế,
+                        và chúng tôi đang yêu cầu từng công ty hành động quyết liệt. Tại New Norman,
+                        không quá lời khi nói rằng sự tồn tại của một công ty phụ thuộc vào khả năng
+                        thích ứng với cách làm việc hiệu quả hơn.<br /><br />Đối với những công ty thường
+                        không thể tập trung sức lực vào việc chuyển đổi kinh doanh, thì việc phát triển ra
+                        nước ngoài để đón đầu triển vọng trong tương lai là một chiến lược khó khăn khi
+                        thị trường trì trệ và nguồn lực sẵn có.<br /><br />Giờ đây, công việc từ xa đã trở nên quá phổ
+                        biến,
+                        sự phát triển ra nước ngoài đã gần hơn rất nhiều so với trước Corona.<br /> <br />
+                        Trong buổi hội thảo này, tôi sẽ giải thích những điểm bạn nên biết về phát triển nước ngoài tại
+                        Việt Nam bằng cách trả lời các câu hỏi sau.
                         <br />
-                        “Dịch vụ Offshore có thể mang đến lợi ích gì cho doanh nghiệp của bạn trong thời kỳ
-                        khủng hoảng này?”,
+                        * Lý do sử dụng phát triển nước ngoài hiện nay là gì?
                         <br />
-                        “Làm thế nào có thể áp dụng dịch vụ Offshore một cách hiệu quả?”,
+                        * Làm thế nào để tận dụng hiệu quả việc phát triển ra nước ngoài?
                         <br />
-                        “Làm thế nào để tránh được những thất bại thường gặp phải khi sử dụng dịch vụ offshore?”</h5>
-                    <center><img src="img/background/covid.png" alt=""
+                        * Làm thế nào để tránh những sai lầm phổ biến trong phát triển ra nước ngoài?</h5>
+                    <center><img src="img/background/4.png" alt=""
                             style="height: 90%; margin-left: 50px; padding-bottom: 10px;" /></center>
                     <h5>
                         Tất cả câu hỏi trên và còn nhiều những câu hỏi khác sẽ được chúng tôi giải đáp
@@ -1151,23 +1142,25 @@
             var emailSuccess = $("#emailSuccess");
             var msg_subject = $("#msg_subject");
             var message = $("#message");
-            $('.contact-btn1').button('loading');
-            $.ajax({
-                url: 'sendSuccess.php',
-                method: 'POST',
-                dataType: 'json',
-                data: {
-                    nameSuccess: nameSuccess.val(),
-                    emailSuccess: emailSuccess.val(),
-                    msg_subject: msg_subject.val(),
-                    message: message.val()
-                }, success: function (response) {
-                    swal("", "Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)", "success");
-                    $('#contactForm')[0].reset();
-                    $('.contact-btn1').button('reset');
-                    // $('.modal').modal('hide');
-                }
-            });
+            if (isNotEmpty(nameSuccess) && isNotEmpty(emailSuccess) && isNotEmpty(msg_subject) && isNotEmpty(message)) {
+                $('.contact-btn1').button('loading');
+                $.ajax({
+                    url: 'sendSuccess.php',
+                    method: 'POST',
+                    dataType: 'json',
+                    data: {
+                        nameSuccess: nameSuccess.val(),
+                        emailSuccess: emailSuccess.val(),
+                        msg_subject: msg_subject.val(),
+                        message: message.val()
+                    }, success: function (response) {
+                        swal("", "Cảm ơn bạn đã đăng ký, chúng tôi sẽ gửi cho bạn link URL buổi seminar qua email bạn đã đăng ký vào buổi tối trước ngày seminar được diễn ra (19/08/2020)", "success");
+                        $('#contactForm')[0].reset();
+                        $('.contact-btn1').button('reset');
+                        // $('.modal').modal('hide');
+                    }
+                });
+            }
         }
         function sendEmail() {
             var name = $("#name");
