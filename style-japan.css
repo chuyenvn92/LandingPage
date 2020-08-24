@@ -1739,6 +1739,13 @@ span.base {
 #languge{
     margin-left: -80px !important;
 }
+#date-line{
+    padding-bottom: 78px;
+    font-size: 1.6rem;
+    background: #f9f9f9;
+    color: #000000;
+    font-family: "游ゴシック Medium",YuGothic,YuGothicM,"Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro",メイリオ,Meiryo,sans-serif;
+}
 /*----------------------------------------*/
 /* End Pages
 /*----------------------------------------*/
